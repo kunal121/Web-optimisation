@@ -4,7 +4,7 @@ pizzaIngredients.nonMeats = ["White Onions", "Red Onions", "Sauteed Onions", "Gr
 pizzaIngredients.cheeses = ["American Cheese", "Swiss Cheese", "Goat Cheese", "Mozzarella Cheese", "Parmesean Cheese", "Velveeta Cheese", "Gouda Cheese", "Muenster Cheese", "Applewood Cheese", "Asiago Cheese", "Bleu Cheese", "Boursin Cheese", "Brie Cheese", "Cheddar Cheese", "Chevre Cheese", "Havarti Cheese", "Jack Cheese", "Pepper Jack Cheese", "Gruyere Cheese", "Limberger Cheese", "Manchego Cheese", "Marscapone Cheese", "Pecorino Cheese", "Provolone Cheese", "Queso Cheese", "Roquefort Cheese", "Romano Cheese", "Ricotta Cheese", "Smoked Gouda"];
 pizzaIngredients.sauces = ["Red Sauce", "Marinara", "BBQ Sauce", "No Sauce", "Hot Sauce"];
 pizzaIngredients.crusts = ["White Crust", "Whole Wheat Crust", "Flatbread Crust", "Stuffed Crust"];
-	
+
 // Name generator pulled from http://saturdaykid.com/usernames/generator.html
 // Capitalizes first letter of each word
 String.prototype.capitalize = function() {
@@ -299,11 +299,11 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-	  var randomPizzaContainer=document.getElementsByClassName("randomPizzaContainer");
-	  var dx = determineDx(randomPizzaContainer[0], size);
-	  var newwidth = (randomPizzaContainer[0].offsetWidth + dx) + 'px';
-    for (var i = 0; i < randomPizzaContainer.length; i++) {
-      randomPizzaContainer[i].style.width = newwidth;
+	  var PizzaContainer=document.getElementsByClassName("randomPizzaContainer");
+	  var dx = determineDx(PizzaContainer[0], size);
+	  var newwidth = (PizzaContainer[0].offsetWidth + dx) + 'px';
+    for (var i = 0; i < PizzaContainer.length; i++) {
+      PizzaContainer[i].style.width = newwidth;
     }
   }
   changePizzaSizes(size);
@@ -369,7 +369,8 @@ window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
-  for(var e= 8, a = 256,r=0; 200>r; r++) {
+	var e= 8, a = 256;
+  for(r=0; r<200; r++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
