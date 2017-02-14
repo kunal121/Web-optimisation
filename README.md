@@ -8,6 +8,10 @@
 =>pizza.html
 -open folder then go to views .
 -open pizza.html.
+=>main.js
+-open folder then go to views.
+-open main.js.
+
 #How to do it
 ***********************
 =>Compress the images by online available tools.
